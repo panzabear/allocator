@@ -10,6 +10,35 @@
   </head>
 
   <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary navbar-toggleable-xl">
+  <a class="navbar-brand" href="#">PortAlloc</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Create Allocation", allocations_path, class: "nav-link "%>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Portfolio Review</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Create Portfolios</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <% if notice.present? %>
+    <p class="alert alert-info"><%= notice %></p>
+    <% end %>
+    <% if alert.present? %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
